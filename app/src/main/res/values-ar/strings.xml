@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MediGuide</string>
+    <string name="greeting_user">مرحباً أيها المستخدم!</string>
+    <string name="welcome_message">أهلاً بك!</string>
+    <string name="score_message">نتيجتك: %1$d</string>
+    <string name="updated_time">تم التحديث: %1$s</string>
+    <plurals name="items_count">
+        <item quantity="zero">%1$d عنصر</item>
+        <item quantity="one">%1$d عنصر</item>
+        <item quantity="two">%1$d عنصران</item>
+        <item quantity="few">%1$d عناصر</item>
+        <item quantity="many">%1$d عنصراً</item>
+        <item quantity="other">%1$d عنصر</item>
+    </plurals>
+    <string name="nav_home">الرئيسية</string>
+    <string name="nav_settings">الإعدادات</string>
+    <string name="refresh_button">تحديث</string>
+    <string name="app_started">بدء تشغيل التطبيق</string>
+</resources>

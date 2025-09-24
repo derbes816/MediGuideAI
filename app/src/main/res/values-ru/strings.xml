@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">МедиГайд</string>
+    <string name="greeting_user">Здравствуйте, пользователь!</string>
+    <string name="welcome_message">Добро пожаловать!</string>
+    <string name="score_message">Ваш результат: %1$d</string>
+    <string name="updated_time">Обновлено: %1$s</string>
+    <plurals name="items_count">
+        <item quantity="one">%1$d элемент</item>
+        <item quantity="few">%1$d элемента</item>
+        <item quantity="many">%1$d элементов</item>
+        <item quantity="other">%1$d элемента</item>
+    </plurals>
+    <string name="nav_home">Главная</string>
+    <string name="nav_settings">Настройки</string>
+    <string name="refresh_button">Обновить</string>
+    <string name="app_started">Приложение запущено</string>
+</resources>

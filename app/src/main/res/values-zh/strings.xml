@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MediGuide</string>
+    <string name="greeting_user">你好，用户！</string>
+    <string name="welcome_message">欢迎！</string>
+    <string name="score_message">你的分数: %1$d</string>
+    <string name="updated_time">已更新: %1$s</string>
+    <plurals name="items_count">
+        <item quantity="other">%1$d 个项目</item>
+    </plurals>
+    <string name="nav_home">首页</string>
+    <string name="nav_settings">设置</string>
+    <string name="refresh_button">刷新</string>
+    <string name="app_started">应用程序已启动</string>
+</resources>

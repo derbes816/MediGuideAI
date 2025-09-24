@@ -1,0 +1,131 @@
+Ñòðóêòóðà ïàïîê òîìà Ëîêàëüíûé äèñê 2
+Ñåðèéíûé íîìåð òîìà: 9E7D-2B23
+C:\USERS\ST155\MEDIGUIDEAI\APP\SRC
++---androidTest
+¦   L---java
+¦       L---com
+¦           L---st
+¦               L---mediguidenai
+¦                       ExampleInstrumentedTest.kt
+¦                       
++---main
+¦   ¦   AndroidManifest.xml
+¦   ¦   
+¦   +---assets
+¦   ¦   L---database
+¦   ¦           faq_en.db
+¦   ¦           
+¦   +---java
+¦   ¦   L---com
+¦   ¦       L---st
+¦   ¦           L---mediguidenai
+¦   ¦               ¦   MainActivity.kt
+¦   ¦               ¦   MainViewModel.kt
+¦   ¦               ¦   MyApplication.kt
+¦   ¦               ¦   
+¦   ¦               +---data
+¦   ¦               ¦   L---db
+¦   ¦               ¦           AppDatabase.kt
+¦   ¦               ¦           FaqDao.kt
+¦   ¦               ¦           FaqDatabase.kt
+¦   ¦               ¦           FaqEntity.kt
+¦   ¦               ¦           FaqFtsEntity.kt
+¦   ¦               ¦           FaqRepository.kt
+¦   ¦               ¦           FaqSeeder.kt
+¦   ¦               ¦           
+¦   ¦               +---di
+¦   ¦               ¦       DatabaseModule.kt
+¦   ¦               ¦       
+¦   ¦               L---ui
+¦   ¦                   ¦   FaqActivity.kt
+¦   ¦                   ¦   FaqAdapter.kt
+¦   ¦                   ¦   
+¦   ¦                   L---viewmodels
+¦   ¦                           FaqViewModel.kt
+¦   ¦                           
+¦   L---res
+¦       +---drawable
+¦       ¦       ic_launcher_background.xml
+¦       ¦       ic_launcher_foreground.xml
+¦       ¦       
+¦       +---layout
+¦       ¦       activity_faq.xml
+¦       ¦       activity_main.xml
+¦       ¦       item_faq.xml
+¦       ¦       
+¦       +---menu
+¦       ¦       drawer_menu.xml
+¦       ¦       
+¦       +---mipmap-anydpi
+¦       ¦       ic_launcher.xml
+¦       ¦       ic_launcher_round.xml
+¦       ¦       
+¦       +---mipmap-hdpi
+¦       ¦       ic_launcher.webp
+¦       ¦       ic_launcher_round.webp
+¦       ¦       
+¦       +---mipmap-mdpi
+¦       ¦       ic_launcher.webp
+¦       ¦       ic_launcher_round.webp
+¦       ¦       
+¦       +---mipmap-xhdpi
+¦       ¦       ic_launcher.webp
+¦       ¦       ic_launcher_round.webp
+¦       ¦       
+¦       +---mipmap-xxhdpi
+¦       ¦       ic_launcher.webp
+¦       ¦       ic_launcher_round.webp
+¦       ¦       
+¦       +---mipmap-xxxhdpi
+¦       ¦       ic_launcher.webp
+¦       ¦       ic_launcher_round.webp
+¦       ¦       
+¦       +---values
+¦       ¦       colors.xml
+¦       ¦       strings.xml
+¦       ¦       themes.xml
+¦       ¦       
+¦       +---values-ar
+¦       ¦       strings.xml
+¦       ¦       
+¦       +---values-de
+¦       ¦       strings.xml
+¦       ¦       
+¦       +---values-en
+¦       ¦       strings.xml
+¦       ¦       
+¦       +---values-es
+¦       ¦       strings.xml
+¦       ¦       
+¦       +---values-fr
+¦       ¦       strings.xml
+¦       ¦       
+¦       +---values-it
+¦       ¦       strings.xml
+¦       ¦       
+¦       +---values-ja
+¦       ¦       strings.xml
+¦       ¦       
+¦       +---values-pt
+¦       ¦       strings.xml
+¦       ¦       
+¦       +---values-ru
+¦       ¦       strings.xml
+¦       ¦       
+¦       +---values-tr
+¦       ¦       strings.xml
+¦       ¦       
+¦       +---values-zh
+¦       ¦       strings.xml
+¦       ¦       
+¦       L---xml
+¦               backup_rules.xml
+¦               data_extraction_rules.xml
+¦               
+L---test
+    L---java
+        L---com
+            L---st
+                L---mediguidenai
+                        ExampleUnitTest.kt
+                        

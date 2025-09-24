@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">MediGuide</string>
+    <string name="greeting_user">¡Hola, usuario!</string>
+    <string name="welcome_message">¡Bienvenido!</string>
+    <string name="score_message">Tu puntuación: %1$d</string>
+    <string name="updated_time">Actualizado: %1$s</string>
+    <plurals name="items_count">
+        <item quantity="one">%1$d elemento</item>
+        <item quantity="other">%1$d elementos</item>
+    </plurals>
+    <string name="nav_home">Inicio</string>
+    <string name="nav_settings">Ajustes</string>
+    <string name="refresh_button">Actualizar</string>
+    <string name="app_started">Aplicación iniciada</string>
+</resources>

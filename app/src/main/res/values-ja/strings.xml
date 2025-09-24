@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">メディガイド</string>
+    <string name="greeting_user">こんにちは、ユーザー！</string>
+    <string name="welcome_message">ようこそ！</string>
+    <string name="score_message">あなたのスコア: %1$d</string>
+    <string name="updated_time">更新日時: %1$s</string>
+    <plurals name="items_count">
+        <item quantity="other">%1$d 件</item>
+    </plurals>
+    <string name="nav_home">ホーム</string>
+    <string name="nav_settings">設定</string>
+    <string name="refresh_button">更新</string>
+    <string name="app_started">アプリが起動しました</string>
+</resources>
