@@ -7,45 +7,82 @@ on:
     branches: [ "main" ]
 
 jobs:
-  build:
+  # --- ЗАДАЧА 1: ПРОВЕРКА КАЧЕСТВА КОДА ---
+  checks:
+    name: Lint & Unit Tests
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
         with:
           distribution: 'temurin'
           java-version: '17'
+          cache: 'gradle'
 
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
 
-      - name: Build project
-        run: ./gradlew build --stacktrace
+      # УЛУЧШЕНИЕ: Запускаем lint и тесты одной командой.
+      # Это немного быстрее и эффективнее.
+      # Также указываем конкретный вариант 'lintDebug' вместо общего 'lint'.
+      - name: Run checks
+        run: ./gradlew lintDebug testDebugUnitTest
 
-      - name: Run unit tests
-        run: ./gradlew test
+  # --- ЗАДАЧА 2: СБОРКА APK ---
+  build:
+    name: Build APK
+    # Запускаем только после успешного прохождения проверок
+    needs: checks
+    runs-on: ubuntu-latest
 
-      - name: Run lint checks
-        run: ./gradlew lint
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          cache: 'gradle'
+
+      - name: Grant execute permission for gradlew
+        run: chmod +x gradlew
 
       - name: Assemble Debug APK
         run: ./gradlew assembleDebug
 
-      - name: Upload Debug APK
-        uses: actions/upload-artifact@v3
+      - name: Upload Debug APK as Artifact
+        uses: actions/upload-artifact@v4
         with:
           name: app-debug
           path: app/build/outputs/apk/debug/app-debug.apk
 
+      # ИСПРАВЛЕНИЕ: Добавлена логика для безопасной подписи Release APK.
+      # Этот шаг будет выполнен только при push в ветку main
+      # и только если вы настроили GitHub Secrets (см. инструкцию ниже).
       - name: Assemble Release APK
-        run: ./gradlew assembleRelease
+        if: github.event_name == 'push' && secrets.SIGNING_KEY_STORE_BASE64 != null
+        env:
+          # Передаём секреты как переменные окружения в CI
+          SIGNING_KEY_STORE_BASE64: ${{ secrets.SIGNING_KEY_STORE_BASE64 }}
+          SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
+          SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
+          SIGNING_STORE_PASSWORD: ${{ secrets.SIGNING_STORE_PASSWORD }}
+        run: |
+          # Декодируем ключ из секрета и сохраняем его в файл
+          echo $SIGNING_KEY_STORE_BASE64 | base64 --decode > $GITHUB_WORKSPACE/keystore.jks
+          # Запускаем сборку. Gradle подхватит переменные окружения для подписи.
+          ./gradlew assembleRelease
 
-      - name: Upload Release APK
-        uses: actions/upload-artifact@v3
+      # Загружаем Release APK как артефакт, если он был собран
+      - name: Upload Release APK as Artifact
+        if: success() && github.event_name == 'push' && secrets.SIGNING_KEY_STORE_BASE64 != null
+        uses: actions/upload-artifact@v4
         with:
           name: app-release
           path: app/build/outputs/apk/release/app-release.apk
